@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    {% load static %}
+    <link  rel="stylesheet" href="{% static 'log_in/style.css' %}">
+    <title>Handy Helper</title>
+
+</head>
+<body>
+    <section class="hero is-large">
+        <div class="container ">
+            <h1 class="title is-inline">Edit a Job</h1>
+            
+            <p class="logout"><a href="/userdashboard"><u>back</u> |
+                    <a href="/logout"><u>Logout</u></a> 
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+        
+            
+            <div class="columns">
+                    <div class="column">
+                        <!-- <h1 class="title h1_position">Add a trip</h1> -->
+                        <form action="/editjob/{{job.id}}" method="POST">{% csrf_token %}
+                        <table class="mytable">
+                            <tbody>
+                                    <tr>
+                                        <td class="label_">Title: </td>
+                                        <td class="textbox_"><input class="input" type="text" name="title" value="{{job.title}}"></td>        
+                                    </tr> 
+                                    <tr>
+                                        <td class="label_">Description </td>
+                                        <!-- <td class="textbox_"><input class="input" type="text" name="desc" placeholder="Description"></td>         -->
+                                        <td><textarea class="textarea" name="desc">{{job.desc}}</textarea></td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="label_">Location </td>
+                                        <td class="textbox_"><input class="input" type="text" name="location" value="{{job.location}}">
+                                        <input type="hidden" name="hidden_id" value="{{Job.id}}">
+                                        </td>        
+                                    </tr> 
+                            </tbody>
+                        </table>
+                        <input type="submit" class="button is-dark btn_position" value="Submit">
+                    </form>
+                    </div>
+                    <div class="column">
+                            <div class="errorbox"><br>
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                <br>
+                            </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+.mytable {
+    border: none;
+    width: 100%;
+}
+.label_{
+    text-align: right;
+    padding: 5px 10px 10px 0;
+    width: 20%;
+}
+.textbox_{
+    width: 55%;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+.row{
+    margin: 5px;
+}
+.btn_position{
+    margin-left: 80%;
+}
+.h1_position {
+    margin-left: 45%;
+}
+.spacing{
+    height: 50px;
+}
+.errorbox{
+    color: red;
+    width: 100%;
+    margin-left: 40%;
+}
+.travelbuddy{
+    margin-left: 100px;
+}
+.logout{
+    margin-left: 60%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.viewbox{
+    border: 1px solid black;
+    padding: 10px;
+}
