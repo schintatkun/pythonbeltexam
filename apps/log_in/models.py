@@ -150,5 +150,5 @@ class Job(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = JobManager()
-    def __repr__(self):
-        return f"<Item Object {self.title} {self.desc}>"
+    
+        
